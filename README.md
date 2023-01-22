@@ -35,6 +35,10 @@ root---|
        |
        |
        |---
+       |   |---examples (contains some examples to start exploring various scenarios)
+       |
+       |
+       |---
        |   |---scripts (scripts for various setup and in-container setup - example installing the runtimes in the images, starting runtimes etc.)
        |
        |
