@@ -30,3 +30,10 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Serverless Image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: pradeep4docker/serverless-node-js:${{ steps.short-sha.outputs.sha }}, pradeep4docker/serverless-node-js:latest
+          file: ./docker/serverless.Dockerfile
