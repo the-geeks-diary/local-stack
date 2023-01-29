@@ -37,3 +37,10 @@ jobs:
           push: true
           tags: pradeep4docker/serverless-node-js:${{ steps.short-sha.outputs.sha }}, pradeep4docker/serverless-node-js:latest
           file: ./docker/serverless.Dockerfile
+      - name: Build Localstack Image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: pradeep4docker/local-stack-dev:${{ steps.short-sha.outputs.sha }}, pradeep4docker/local-stack-dev:latest
+          file: ./docker/localstack.Dockerfile
