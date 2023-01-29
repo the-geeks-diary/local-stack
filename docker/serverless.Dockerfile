@@ -22,7 +22,8 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh \
     && add-apt-repository universe \
     && apt-get -y install curl git-all rustc python2 python3 python3-dev python3-pip ca-certificates groff less make jq wget g++ zip openssh-server \
     && curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
+    && . $NVM_DIR/nvm.sh \
+    && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
