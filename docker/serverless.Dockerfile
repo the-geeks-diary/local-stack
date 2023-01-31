@@ -38,3 +38,10 @@ RUN corepack enable \
     && npm install -g aws-cli \
     && npm install -g serverless@$SERVERLESS_VERSION \
     && update-ca-certificates
+
+# Package AWS CLI
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install
+
+CMD [ "/bin/bash" ]
