@@ -13,6 +13,8 @@ ENV NODE_VERSION $NODE_VERSION
 ENV NVM_INSTALL_PATH $NVM_DIR/versions/node/v$NODE_VERSION
 ENV NVM_VERSION $NVM_VERSION
 ENV YARN_VERSION $YARN_VERSION
+ENV AWS_CONFIG_FILE "/root/.aws/config"
+ENV AWS_SHARED_CREDENTIALS_FILE "/root/.aws/credentials"
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive TZ=America/New_York apt-get -y install tzdata
 
