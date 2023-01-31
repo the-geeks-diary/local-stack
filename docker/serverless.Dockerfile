@@ -48,4 +48,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 
 ADD ./scripts/.aws /root/.aws
 
+WORKDIR /app-code
+
 CMD [ "/bin/bash" ]
