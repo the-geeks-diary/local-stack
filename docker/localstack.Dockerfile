@@ -27,4 +27,9 @@ RUN source $NVM_DIR/nvm.sh \
 ENV NODE_PATH $NVM_INSTALL_PATH/lib/node_modules
 ENV PATH $NVM_INSTALL_PATH/bin:$PATH
 
+# Package AWS CLI & Configure
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && unzip awscliv2.zip \
+    && ./aws/install
+
 ENTRYPOINT ["docker-entrypoint.sh"]
